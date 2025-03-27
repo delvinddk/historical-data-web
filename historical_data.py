@@ -6,6 +6,24 @@ from streamlit_folium import folium_static
 import plotly.express as px
 from datetime import datetime
 
+# Set page configuration
+st.set_page_config(page_title="My Streamlit App", page_icon="🌍")
+
+# Attempt to allow embedding in iframe
+st.markdown(
+    """
+    <meta http-equiv="Content-Security-Policy" content="frame-ancestors *;">
+    <style>
+        iframe {border: none !important;}
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+st.title("My Streamlit App")
+st.write("This app is trying to be embedded in an iframe.")
+
+
 # Increase server max message size
 st._config.set_option("server.maxMessageSize", 500)
 
